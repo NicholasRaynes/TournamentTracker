@@ -1,0 +1,9 @@
+C:\Users\nicho\source\repos\TournamentTracker\TrackerLibrary\bin\Debug\TrackerLibrary.dll
+C:\Users\nicho\source\repos\TournamentTracker\TrackerLibrary\bin\Debug\TrackerLibrary.pdb
+C:\Users\nicho\source\repos\TournamentTracker\TrackerLibrary\bin\Debug\Dapper.dll
+C:\Users\nicho\source\repos\TournamentTracker\TrackerLibrary\bin\Debug\Dapper.xml
+C:\Users\nicho\source\repos\TournamentTracker\TrackerLibrary\obj\Debug\TrackerLibrary.csproj.AssemblyReference.cache
+C:\Users\nicho\source\repos\TournamentTracker\TrackerLibrary\obj\Debug\TrackerLibrary.csproj.CoreCompileInputs.cache
+C:\Users\nicho\source\repos\TournamentTracker\TrackerLibrary\obj\Debug\TrackerLibrary.csproj.CopyComplete
+C:\Users\nicho\source\repos\TournamentTracker\TrackerLibrary\obj\Debug\TrackerLibrary.dll
+C:\Users\nicho\source\repos\TournamentTracker\TrackerLibrary\obj\Debug\TrackerLibrary.pdb
