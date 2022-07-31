@@ -17,7 +17,7 @@ namespace TrackerLibrary.DataAccess
 		/// <summary>
 		/// Saves a new person to the database.
 		/// </summary>
-		/// <param name="model">The person information</param>
+		/// <param name="model">The person information.</param>
 		public void CreatePerson(PersonModel model)
 		{
 			using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
@@ -38,7 +38,7 @@ namespace TrackerLibrary.DataAccess
 		/// <summary>
 		/// Saves a new prize to the database.
 		/// </summary>
-		/// <param name="model">The prize information</param>
+		/// <param name="model">The prize information.</param>
 		public void CreatePrize(PrizeModel model)
 		{
 			using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
@@ -59,7 +59,7 @@ namespace TrackerLibrary.DataAccess
 		/// <summary>
 		/// Saves a new team to the database.
 		/// </summary>
-		/// <param name="model">The team information<</param>
+		/// <param name="model">The team information.<</param>
 		public void CreateTeam(TeamModel model)
 		{
 			using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
@@ -82,7 +82,11 @@ namespace TrackerLibrary.DataAccess
 				}
 			}
 		}
-
+		
+		/// <summary>
+		/// Creates a new tournament to the database.
+		/// </summary>
+		/// <param name="model">The tournament information.<</param>
 		public void CreateTournament(TournamentModel model)
 		{
 			using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
@@ -99,6 +103,11 @@ namespace TrackerLibrary.DataAccess
 			}
 		}
 
+		/// <summary>
+		/// Saves a new tournament to the database.
+		/// </summary>
+		/// <param name="connection">The connection to the database.<</param>
+		/// <param name="model">The tournament information.<</param>
 		private void SaveTournament(IDbConnection connection, TournamentModel model)
 		{
 			var p = new DynamicParameters();
@@ -111,6 +120,11 @@ namespace TrackerLibrary.DataAccess
 			model.Id = p.Get<int>("@Id");
 		}
 
+		/// <summary>
+		/// Saves the tournament prizes to the database.
+		/// </summary>
+		/// <param name="connection">The connection to the database.<</param>
+		/// <param name="model">The tournament information.<</param>
 		private void SaveTournamentPrizes(IDbConnection connection, TournamentModel model)
 		{
 			foreach (PrizeModel pz in model.Prizes)
@@ -124,6 +138,11 @@ namespace TrackerLibrary.DataAccess
 			}
 		}
 
+		/// <summary>
+		/// Saves the torunament entries to the database.
+		/// </summary>
+		/// <param name="connection">The connection to the database.<</param>
+		/// <param name="model">The tournament information.<</param>
 		private void SaveTournamentEntries(IDbConnection connection, TournamentModel model)
 		{
 			foreach (TeamModel tm in model.EnteredTeams)
@@ -137,6 +156,11 @@ namespace TrackerLibrary.DataAccess
 			}
 		}
 
+		/// <summary>
+		/// Saves the tournament rounds to the database.
+		/// </summary>
+		/// <param name="connection">The connection to the database.<</param>
+		/// <param name="model">The tournament information.<</param>
 		private void SaveTournamentRounds(IDbConnection connection, TournamentModel model)
 		{
 			foreach (List<MatchupModel> round in model.Rounds)
@@ -185,9 +209,9 @@ namespace TrackerLibrary.DataAccess
 		}
 
 		/// <summary>
-		/// Returns a list of all people from the database
+		/// Returns a list of all people from the database.
 		/// </summary>
-		/// <returns>List of person information</returns>
+		/// <returns>List of person information.</returns>
 		public List<PersonModel> GetPerson_All()
 		{
 			List<PersonModel> output;
@@ -201,9 +225,9 @@ namespace TrackerLibrary.DataAccess
 		}
 
 		/// <summary>
-		/// Returns a list of all teams from the database
+		/// Returns a list of all teams from the database.
 		/// </summary>
-		/// <returns>List of teams information</returns>
+		/// <returns>List of teams information.</returns>
 		public List<TeamModel> GetTeam_All()
 		{
 			List<TeamModel> output;
@@ -223,7 +247,10 @@ namespace TrackerLibrary.DataAccess
 
 			return output;
 		}
-
+		
+		/// <summary>
+		/// Returns a list of all the tournaments from the database.
+		/// </summary>
 		public List<TournamentModel> GetTournament_All()
 		{
 			List<TournamentModel> output;
@@ -314,7 +341,11 @@ namespace TrackerLibrary.DataAccess
 
 			return output;
 		}
-
+		
+		/// <summary>
+		/// Updates the matchup to the database.
+		/// </summary>
+		/// <param name="model">The current matchup information.<</param>
 		public void UpdateMatchup(MatchupModel model)
 		{
 			using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
@@ -344,6 +375,10 @@ namespace TrackerLibrary.DataAccess
 			}
 		}
 
+		/// <summary>
+		/// Completes/finishes the current tournament.
+		/// </summary>
+		/// <param name="model">The tournament information.<</param>
 		public void CompleteTournament(TournamentModel model)
 		{
 			using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
