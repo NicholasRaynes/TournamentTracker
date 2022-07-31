@@ -7,15 +7,17 @@ using TrackerLibrary.Models;
 
 namespace TrackerLibrary.DataAccess
 {
+	/// <summary>
+    	/// This class represents a connector to an SQL database.
+    	/// </summary>
 	public class SqlConnector : IDataConnection
 	{
 		private const string db = "Tournament";
 
 		/// <summary>
-		/// Saves a new person to the database
+		/// Saves a new person to the database.
 		/// </summary>
 		/// <param name="model">The person information</param>
-		/// <returns>The person information plus the unique identifier.</returns>
 		public void CreatePerson(PersonModel model)
 		{
 			using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
@@ -34,10 +36,9 @@ namespace TrackerLibrary.DataAccess
 		}
 
 		/// <summary>
-		/// Saves a new prize to the database
+		/// Saves a new prize to the database.
 		/// </summary>
 		/// <param name="model">The prize information</param>
-		/// <returns>The prize information plus the unique identifier.</returns>
 		public void CreatePrize(PrizeModel model)
 		{
 			using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
@@ -56,10 +57,9 @@ namespace TrackerLibrary.DataAccess
 		}
 
 		/// <summary>
-		/// Saves a new team to the database
+		/// Saves a new team to the database.
 		/// </summary>
 		/// <param name="model">The team information<</param>
-		/// <returns>The team information plus the unique identifier.</returns>
 		public void CreateTeam(TeamModel model)
 		{
 			using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
