@@ -8,10 +8,9 @@ namespace TrackerLibrary.DataAccess
 	public class TextConnector : IDataConnection
 	{
 		/// <summary>
-		/// Saves a new person to a text file
+		/// Saves a new person to a text file.
 		/// </summary>
-		/// <param name="model">The person information</param>
-		/// <returns>The person information plus the unique identifier.</returns>
+		/// <param name="model">The person information.</param>
 		public void CreatePerson(PersonModel model)
 		{
 			// Load the text file
@@ -36,10 +35,9 @@ namespace TrackerLibrary.DataAccess
 		}
 
 		/// <summary>
-		/// Saves a new prize to a text file
+		/// Saves a new prize to a text file.
 		/// </summary>
-		/// <param name="model">The prize information</param>
-		/// <returns>The prize information plus the unique identifier.</returns>
+		/// <param name="model">The prize information.</param>
 		public void CreatePrize(PrizeModel model)
 		{
 			// Load the text file
@@ -65,10 +63,9 @@ namespace TrackerLibrary.DataAccess
 		}
 
 		/// <summary>
-		/// aves a new team to a text file
+		/// Saves a new team to a text file.
 		/// </summary>
-		/// <param name="model">The team information</param>
-		/// <returns>The team information plus the unique identifier.</returns>
+		/// <param name="model">The team information.</param>
 		public void CreateTeam(TeamModel model)
 		{
 			List<TeamModel> teams = GlobalConfig.TeamFile.FullFilePath().LoadFile().ConvertToTeamModels();
@@ -89,23 +86,27 @@ namespace TrackerLibrary.DataAccess
 		}
 
 		/// <summary>
-		/// Returns a list of all people from a text file
+		/// Returns a list of all people from a text file.
 		/// </summary>
-		/// <returns>List of person information</returns>
+		/// <returns>List of peoples information.</returns>
 		public List<PersonModel> GetPerson_All()
 		{
 			return GlobalConfig.PeopleFile.FullFilePath().LoadFile().ConvertToPersonModels();
 		}
 
 		/// <summary>
-		/// Returns a list of all teams from a text file
+		/// Returns a list of all teams from a text file.
 		/// </summary>
-		/// <returns>List of team information</returns>
+		/// <returns>List of teams information.</returns>
 		public List<TeamModel> GetTeam_All()
 		{
 			return GlobalConfig.TeamFile.FullFilePath().LoadFile().ConvertToTeamModels();
 		}
 
+		/// <summary>
+		/// Creates a new tournament to the text file.
+		/// </summary>
+		/// <param name="model">The tournament information.</param>
 		public void CreateTournament(TournamentModel model)
 		{
 			List<TournamentModel> tournaments = GlobalConfig.TournamentFile
@@ -131,6 +132,10 @@ namespace TrackerLibrary.DataAccess
 			TournamentLogic.UpdateTournamentResults(model);
 		}
 
+		/// <summary>
+		/// Returns a list of all tournaments from a text file.
+		/// </summary>
+		/// <returns>List of tournaments information.</returns>
 		public List<TournamentModel> GetTournament_All()
 		{
 			return GlobalConfig.TournamentFile
@@ -139,11 +144,19 @@ namespace TrackerLibrary.DataAccess
 				.ConvertToTournamentModels();
 		}
 
+		/// <summary>
+		/// Updates a matchup to the text file.
+		/// </summary>
+		/// <param name="model">The tournament information.</param>
 		public void UpdateMatchup(MatchupModel model)
 		{
 			model.UpdateMatchupToFile();
 		}
 
+		/// <summary>
+		/// Completes the current tournament.
+		/// </summary>
+		/// <param name="model">The tournament information.</param>
 		public void CompleteTournament(TournamentModel model)
 		{
 			List<TournamentModel> tournaments = GlobalConfig.TournamentFile
