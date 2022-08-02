@@ -5,6 +5,9 @@ using System.Linq;
 
 namespace TrackerLibrary.DataAccess
 {
+	/// <summary>
+    	/// This class represents a connector to a text file.
+    	/// </summary>
 	public class TextConnector : IDataConnection
 	{
 		/// <summary>
