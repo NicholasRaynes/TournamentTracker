@@ -32,6 +32,9 @@ namespace TrackerLibrary.Models
 		/// </summary>
 		public int MatchupRound { get; set; }
 
+		/// <summary>
+		/// The display name of the matchup.
+		/// </summary>
 		public string DisplayName
 		{
 			get
