@@ -10,11 +10,11 @@
 		/// </summary>
 		public int Id { get; set; }
 		/// <summary>
-		/// The numeric identifier for the place (2 for the second place etc.)
+		/// The numeric identifier for the place (2 for the second place etc).
 		/// </summary>
 		public int PlaceNumber { get; set; }
 		/// <summary>
-		/// The friendly name for the place (second place, first runner up, etc.)
+		/// The friendly name for the place (second place, first runner up, etc).
 		/// </summary>
 		public string PlaceName { get; set; }
 		/// <summary>
@@ -24,12 +24,12 @@
 		/// <summary>
 		/// The number that represent the percentage of the overall take or
 		/// zero if it is not used. The percentage is a fraction of 1 (so 0.5 for 
-		/// 50%)
+		/// 50%).
 		/// </summary>
 		public double PrizePercentage { get; set; }
 		
 		/// <summary>
-		/// Blank Constructor
+		/// Blank Constructor.
 		/// </summary>
 		public PrizeModel()
 		{ 
@@ -37,7 +37,7 @@
 
 		/// <summary>
 		/// Takes the string representation of a PrizeModel field and
-		/// converts it to it's expected type
+		/// converts it to it's expected type.
 		/// </summary>
 		/// <param name="placeName"></param>
 		/// <param name="placeNumber"></param>
