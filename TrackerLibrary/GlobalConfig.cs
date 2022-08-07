@@ -3,6 +3,9 @@ using TrackerLibrary.DataAccess;
 
 namespace TrackerLibrary
 {
+	/// <summary>
+	/// Responsible for establishing a connection between the data file(s), and application.
+	/// </summary>
 	public static class GlobalConfig
 	{
 		public const string PrizesFile = "PrizeModel.csv";
