@@ -39,10 +39,10 @@
 		/// Takes the string representation of a PrizeModel field and
 		/// converts it to it's expected type.
 		/// </summary>
-		/// <param name="placeName"></param>
-		/// <param name="placeNumber"></param>
-		/// <param name="prizeAmount"></param>
-		/// <param name="prizePercentage"></param>
+		/// <param name="placeName">The place name.</param>
+		/// <param name="placeNumber">The place number.</param>
+		/// <param name="prizeAmount">The prize amount.</param>
+		/// <param name="prizePercentage">The prize percentage.</param>
 		public PrizeModel(string placeName, string placeNumber, string prizeAmount, string prizePercentage)
 		{
 			PlaceName = placeName;
