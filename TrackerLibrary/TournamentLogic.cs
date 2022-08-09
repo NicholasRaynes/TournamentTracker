@@ -7,13 +7,15 @@ using TrackerLibrary.Models;
 
 namespace TrackerLibrary
 {
+	/// <summary>
+    	/// This class represents the logic/functionality for a tournament.
+    	/// </summary>
 	public static class TournamentLogic
 	{
-		// Order our list randomly of teams
-		// Check if it is big enough - if not, add in byes - 2*2*2*2 - 2^4
-		// Create our first round of matchups
-		// Create every round after that - 8 matchups - 4 matchups - 2 matchups - 1 matchup
-
+		/// <summary>
+		/// Responsible for creating the rounds for a tournament.
+		/// </summary>
+		/// <param name="model">A tournament model.</param>
 		public static void CreateRounds(TournamentModel model)
 		{
 			List<TeamModel> randomizedTeams = RandomizeTeamOrder(model.EnteredTeams);
@@ -27,6 +29,10 @@ namespace TrackerLibrary
 			UpdateTournamentResults(model);
 		}
 
+		/// <summary>
+		/// Responsible updating the results for a tournament.
+		/// </summary>
+		/// <param name="model">A tournament model.</param>
 		public static void UpdateTournamentResults(TournamentModel model)
 		{
 			int startingRound = model.CheckCurrentRound();
@@ -57,6 +63,10 @@ namespace TrackerLibrary
 			}
 		}
 
+		/// <summary>
+		/// Responsible for alerting users to a new round.
+		/// </summary>
+		/// <param name="model">A tournament model.</param>
 		public static void AlertUsersToNewRound(this TournamentModel model)
 		{
 			int currentRoundNumber = model.CheckCurrentRound();
@@ -74,6 +84,12 @@ namespace TrackerLibrary
 			}
 		}
 
+		/// <summary>
+		/// Responsible for alerting a person to a new round.
+		/// </summary>
+		/// <param name="p">A person model.</param>
+		/// <param name="teamName">The name of a team.</param>
+		/// <param name="competitor">The new matchup competitor for the round.</param>
 		private static void AlertPersonToNewRound(PersonModel p, string teamName, MatchupEntryModel competitor)
 		{
 			if (p.EmailAddress.Length == 0)
@@ -110,6 +126,11 @@ namespace TrackerLibrary
 			EmailLogic.SendEmail(toAddress, subject, body.ToString());
 		}
 
+		/// <summary>
+		/// Responsible for checking the current round.
+		/// </summary>
+		/// <param name="model">A tournament model.</param>
+		/// <returns>The number corresponding to the current round.</returns>
 		private static int CheckCurrentRound(this TournamentModel model)
 		{
 			int output = 1;
@@ -131,6 +152,10 @@ namespace TrackerLibrary
 			return output - 1;
 		}
 
+		/// <summary>
+		/// Responsible for completing a tournament.
+		/// </summary>
+		/// <param name="model">A tournament model.</param>
 		private static void CompleteTournament(TournamentModel model)
 		{
 			GlobalConfig.Connection.CompleteTournament(model);
