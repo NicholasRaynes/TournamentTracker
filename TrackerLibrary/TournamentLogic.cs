@@ -224,6 +224,12 @@ namespace TrackerLibrary
 			model.CompleteTournament();
 		}
 
+		/// <summary>
+		/// Responsible for calculating the prize payout.
+		/// </summary>
+		/// <param name="prize">The prize.</param>
+		/// <param name="totalIncome">The total income.</param>
+		/// <returns>The amount of a prize payout.</returns>
 		private static decimal CalculatePrizePayout(this PrizeModel prize, decimal totalIncome)
 		{
 			decimal output = 0;
@@ -240,6 +246,11 @@ namespace TrackerLibrary
 			return output;
 		}
 
+		/// <summary>
+		/// Responsible for advancing winners.
+		/// </summary>
+		/// <param name="models">A list of matchups.</param>
+		/// <param name="tournament">A tournament model.</param>
 		private static void AdvancedWinners(List<MatchupModel> models, TournamentModel tournament)
 		{
 			foreach (MatchupModel m in models)
@@ -264,6 +275,10 @@ namespace TrackerLibrary
 			}
 		}
 
+		/// <summary>
+		/// Responsible for marking the winners of each matchup.
+		/// </summary>
+		/// <param name="models">A list of matchups.</param>
 		private static void MarkWinnersInMatchups(List<MatchupModel> models)
 		{
 			// greater or lesser
@@ -313,6 +328,11 @@ namespace TrackerLibrary
 			}
 		}
 
+		/// <summary>
+		/// Responsible for creating other rounds.
+		/// </summary>
+		/// <param name="model">A tournament model.</param>
+		/// <param name="rounds">The amount of rounds.</param>
 		private static void CreateOtherRounds(TournamentModel model, int rounds)
 		{
 			int round = 2;
@@ -342,6 +362,12 @@ namespace TrackerLibrary
 			}
 		}
 
+		/// <summary>
+		/// Responsible for creating the first round.
+		/// </summary>
+		/// <param name="byes">The amount of teams with a bye.</param>
+		/// <param name="teams">The list of teams.</param>
+		/// <returns>The list of matchups for the first round.</returns>
 		private static List<MatchupModel> CreateFirstround(int byes, List<TeamModel> teams)
 		{
 			List<MatchupModel> output = new List<MatchupModel>();
@@ -366,7 +392,13 @@ namespace TrackerLibrary
 
 			return output;
 		}
-
+		
+		/// <summary>
+		/// Responsible for obtaining the number of byes.
+		/// </summary>
+		/// <param name="rounds">The amount of rounds.</param>
+		/// <param name="numberOfTeams">The number of teams.</param>
+		/// <returns>The number of byes for a tournament.</returns>
 		private static int NumberOfByes(int rounds, int numberOfTeams)
 		{
 			int output = 0;
@@ -382,6 +414,11 @@ namespace TrackerLibrary
 			return output;
 		}
 
+		/// <summary>
+		/// Responsible for obtaining the number of rounds.
+		/// </summary>
+		/// <param name="teamCount">The amount of teams.</param>
+		/// <returns>The number of rounds.</returns>
 		private static int FindNumberOfRounds(int teamCount)
 		{
 			int output = 1;
@@ -396,6 +433,11 @@ namespace TrackerLibrary
 			return output;
 		}
 
+		/// <summary>
+		/// Responsible for randomizing the team order.
+		/// </summary>
+		/// <param name="teams">A list of teams for a tournament.</param>
+		/// <returns>A randomized list of teams for a tournament.</returns>
 		private static List<TeamModel> RandomizeTeamOrder(List<TeamModel> teams)
 		{
 			return teams.OrderBy(x => Guid.NewGuid()).ToList();
