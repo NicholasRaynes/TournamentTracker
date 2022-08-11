@@ -5,9 +5,16 @@ using TrackerLibrary.Models;
 
 namespace TrackerUI
 {
+	/// <summary>
+    	/// This class represents a create prize form for the application.
+    	/// </summary>
 	public partial class CreatePrizeForm : Form
 	{
 		IPrizeRequester callingForm;
+		
+		/// <summary>
+        	/// Initializes an instance of the CreatePrizeForm class, with an IPrizeRequester parameter.
+		/// </summary>
 		public CreatePrizeForm(IPrizeRequester caller)
 		{
 			InitializeComponent();
@@ -15,6 +22,9 @@ namespace TrackerUI
 			callingForm = caller;
 		}
 
+		/// <summary>
+        	/// Handles the click event for create prize button.
+        	/// </summary>
 		private void CreatePrizeButton_Click(object sender, EventArgs e)
 		{
 			if (ValidateForm())
@@ -42,6 +52,9 @@ namespace TrackerUI
 			}
 		}
 
+		/// <summary>
+        	/// Responsible for validating the form.
+        	/// </summary>
 		private bool ValidateForm()
 		{
 			bool output = true;
