@@ -6,12 +6,18 @@ using TrackerLibrary.Models;
 
 namespace TrackerUI
 {
+	/// <summary>
+    	/// This class represents a create team form for the application.
+    	/// </summary>
 	public partial class CreateTeamForm : Form
 	{
 		private List<PersonModel> availableTeamMembers = GlobalConfig.Connection.GetPerson_All();
 		private List<PersonModel> selectedTeamMembers = new List<PersonModel>();
 		private ITeamRequester callingForm;
 
+		/// <summary>
+        	/// Initializes an instance of the CreateTeamForm class, with an ITeamRequester parameter.
+		/// </summary>
 		public CreateTeamForm(ITeamRequester caller)
 		{
 			InitializeComponent();
@@ -23,6 +29,9 @@ namespace TrackerUI
 			WireUpLists();
 		}
 
+		/// <summary>
+        	/// Responsible for creating sample data to test the application during development.
+        	/// </summary>
 		private void CreateSampleData()
 		{
 			availableTeamMembers.Add(new PersonModel { FirstName = "Tim", LastName = "Corey" });
@@ -32,6 +41,9 @@ namespace TrackerUI
 			selectedTeamMembers.Add(new PersonModel { FirstName = "Bill", LastName = "Jones" });
 		}
 
+		/// <summary>
+        	/// Reponsible for data binding the controls to their corresponding lists.
+        	/// </summary>
 		private void WireUpLists()
 		{
 			selectTeamMemberDropDown.DataSource = null;
@@ -45,6 +57,10 @@ namespace TrackerUI
 			teamMembersListBox.DisplayMember = "FullName";
 		}
 
+		
+		/// <summary>
+        	/// Handles the click event for create member button.
+        	/// </summary>
 		private void CreateMemberButton_Click(object sender, EventArgs e)
 		{
 			if (ValidateForm())
