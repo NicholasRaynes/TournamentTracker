@@ -18,6 +18,7 @@ namespace TrackerUI
 		/// <summary>
         	/// Initializes an instance of the CreateTeamForm class, with an ITeamRequester parameter.
 		/// </summary>
+		/// <param name="caller">The team caller.</param>
 		public CreateTeamForm(ITeamRequester caller)
 		{
 			InitializeComponent();
@@ -59,7 +60,7 @@ namespace TrackerUI
 
 		
 		/// <summary>
-        	/// Handles the click event for create member button.
+        	/// Handles the click event for the create member button.
         	/// </summary>
 		private void CreateMemberButton_Click(object sender, EventArgs e)
 		{
@@ -89,6 +90,10 @@ namespace TrackerUI
 			}
 		}
 
+		/// <summary>
+		/// Responsible for validating the form.
+		/// </summary>
+		/// <returns>Whether the form is valid or not.</returns>
 		private bool ValidateForm()
 		{
 			if (firstNameValue.Text.Length == 0)
@@ -114,6 +119,9 @@ namespace TrackerUI
 			return true;
 		}
 
+		/// <summary>
+        	/// Handles the click event for the add member button.
+        	/// </summary>
 		private void AddMemberButton_Click(object sender, EventArgs e)
 		{
 			PersonModel p = (PersonModel)selectTeamMemberDropDown.SelectedItem;
@@ -127,6 +135,9 @@ namespace TrackerUI
 			}
 		}
 
+		/// <summary>
+        	/// Handles the click event for the remove selected member button.
+        	/// </summary>
 		private void RemoveSelectedMemberButton_Click(object sender, EventArgs e)
 		{
 			PersonModel p = (PersonModel)teamMembersListBox.SelectedItem;
@@ -140,6 +151,9 @@ namespace TrackerUI
 			}
 		}
 
+		/// <summary>
+        	/// Handles the click event for the create team button.
+        	/// </summary>
 		private void CreateTeamButton_Click(object sender, EventArgs e)
 		{
 			TeamModel t = new TeamModel();
