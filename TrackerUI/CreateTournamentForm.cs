@@ -69,6 +69,10 @@ namespace TrackerUI
 			frm.Show();
 		}
 
+		/// <summary>
+        	/// Responsible for adding a prize to the selected prizes list.
+		/// </summary>
+		/// <param name="model">A prize.</param>
 		public void PrizeComplete(PrizeModel model)
 		{
 			// Get back from the form a PrizeModel
@@ -77,18 +81,29 @@ namespace TrackerUI
 			WireUpLists();
 		}
 
+		
+		/// <summary>
+        	/// Responsible for adding a team to the selected teams list.
+		/// </summary>
+		/// <param name="model">A team.</param>
 		public void TeamComplete(TeamModel model)
 		{
 			selectedTeams.Add(model);
 			WireUpLists();
 		}
 
+		/// <summary>
+        	/// Handles the link clicked event for the create new team link.
+        	/// </summary>
 		private void CreateNewTeamLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
 			CreateTeamForm frm = new CreateTeamForm(this);
 			frm.Show();
 		}
 
+		/// <summary>
+        	/// Handles the click event for the remove selected players button.
+        	/// </summary>
 		private void RemoveSelectedPlayersButton_Click(object sender, System.EventArgs e)
 		{
 			TeamModel t = (TeamModel)tournamentTeamsListBox.SelectedItem;
@@ -102,6 +117,9 @@ namespace TrackerUI
 			}
 		}
 
+		/// <summary>
+        	/// Handles the click event for the remove selected prizes button.
+        	/// </summary>
 		private void RemoveSelectedPrizesButton_Click(object sender, System.EventArgs e)
 		{
 			PrizeModel p = (PrizeModel)prizesListBox.SelectedItem;
@@ -114,6 +132,9 @@ namespace TrackerUI
 			}
 		}
 
+		/// <summary>
+        	/// Handles the click event for the create tournament button.
+        	/// </summary>
 		private void CreateTournamentButton_Click(object sender, System.EventArgs e)
 		{
 			// Validate data
