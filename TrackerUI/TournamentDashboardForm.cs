@@ -12,10 +12,16 @@ using TrackerLibrary.Models;
 
 namespace TrackerUI
 {
+	/// <summary>
+    	/// This class represents a tournament dashboard form for the application.
+    	/// </summary>
 	public partial class TournamentDashboardForm : Form
 	{
 		List<TournamentModel> tournaments = GlobalConfig.Connection.GetTournament_All();
 
+		/// <summary>
+        	/// Initializes a new instance of the TournamentDashboardForm class.
+		/// </summary>
 		public TournamentDashboardForm()
 		{
 			InitializeComponent();
