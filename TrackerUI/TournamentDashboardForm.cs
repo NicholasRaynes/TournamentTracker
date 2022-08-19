@@ -29,18 +29,27 @@ namespace TrackerUI
 			WireUpLists();
 		}
 
+		/// <summary>
+        	/// Reponsible for data binding the controls to their corresponding lists.
+        	/// </summary>
 		private void WireUpLists()
 		{
 			loadExistingTournamentDropDown.DataSource = tournaments;
 			loadExistingTournamentDropDown.DisplayMember = "TournamentName";
 		}
 
+		/// <summary>
+        	/// Handles the click event for the create tournament button.
+        	/// </summary>
 		private void CreateTournamentButton_Click(object sender, EventArgs e)
 		{
 			CreateTournamentForm frm = new CreateTournamentForm();
 			frm.Show();
 		}
 
+		/// <summary>
+        	/// Handles the click event for the load tournament button.
+        	/// </summary>
 		private void LoadTournamentButton_Click(object sender, EventArgs e)
 		{
 			TournamentModel tm = (TournamentModel)loadExistingTournamentDropDown.SelectedItem;
