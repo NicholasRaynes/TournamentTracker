@@ -8,12 +8,18 @@ using TrackerLibrary.Models;
 
 namespace TrackerUI
 {
+	/// <summary>
+    	/// This class represents a tournament viewer form for the application.
+    	/// </summary>
 	public partial class TournamentViewerForm : Form
 	{
 		private TournamentModel tournament;
 		BindingList<int> rounds = new BindingList<int>();
 		BindingList<MatchupModel> selectedMatchups = new BindingList<MatchupModel>();
 
+		/// <summary>
+        	/// Initializes a new instance of the TournamentViewerForm class, given a TournamentModel parameter.
+		/// </summary>
 		public TournamentViewerForm(TournamentModel tournamentModel)
 		{
 			InitializeComponent();
@@ -29,16 +35,25 @@ namespace TrackerUI
 			LoadRounds();
 		}
 
+		/// <summary>
+        	/// Handles the OnTournamentComplete event for the tournament.
+        	/// </summary>
 		private void Tournament_OnTournamentComplete(object sender, DateTime e)
 		{
 			this.Close();
 		}
 
+		/// <summary>
+        	/// Responsible for loading the form data into the control.
+        	/// </summary>
 		private void LoadFormData()
 		{
 			tournamentName.Text = tournament.TournamnetName;
 		}
 
+		/// <summary>
+        	/// Reponsible for data binding the controls to their corresponding lists.
+        	/// </summary>
 		private void WireUpLists()
 		{
 			roundDropDown.DataSource = rounds;	
