@@ -61,6 +61,9 @@ namespace TrackerUI
 			matchupListBox.DisplayMember = "DisplayName";
 		}
 
+		/// <summary>
+        	/// Reponsible for loading the rounds.
+        	/// </summary>
 		private void LoadRounds()
 		{
 			rounds.Clear();
@@ -80,11 +83,18 @@ namespace TrackerUI
 			LoadMatchups(1);
 		}
 
+		/// <summary>
+        	/// Handles the SelectedIndexChanged event for the round drop down control.
+        	/// </summary>
 		private void RoundDropDown_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			LoadMatchups((int)roundDropDown.SelectedItem);
 		}
 
+		/// <summary>
+        	/// Reponsible for loading the matchups, provided a round integer value.
+        	/// </summary>
+		/// <param name="round">The round for which to load the matchups for.</param>
 		private void LoadMatchups(int round)
 		{
 			foreach (List<MatchupModel> matchups in tournament.Rounds)
@@ -110,6 +120,9 @@ namespace TrackerUI
 			DisplayMatchupInfo();
 		}
 
+		/// <summary>
+        	/// Reponsible for displaying the matchup info within the form.
+        	/// </summary>
 		private void DisplayMatchupInfo()
 		{ 
 			bool isVisible = (selectedMatchups.Count > 0);
