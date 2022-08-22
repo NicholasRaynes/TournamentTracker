@@ -137,6 +137,10 @@ namespace TrackerUI
 			scoreButton.Visible = isVisible;
 		}
 
+		/// <summary>
+        	/// Reponsible for loading in a matchup.
+        	/// </summary>
+		/// <param name="m">The matchup to be loaded.</param>
 		private void LoadMatchup(MatchupModel m)
 		{
 			for (int i = 0; i < m.Entries.Count; i++)
@@ -174,16 +178,26 @@ namespace TrackerUI
 			}
 		}
 
+		/// <summary>
+        	/// Handles the SelectedIndexChanged event for the matchup listbox control.
+        	/// </summary>
 		private void MatchupListBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			LoadMatchup((MatchupModel)matchupListBox.SelectedItem);
 		}
 
+		/// <summary>
+        	/// Handles the CheckedChanged event for the unplaued only checkbox control.
+        	/// </summary>
 		private void UnplayedOnlyCheckbox_CheckedChanged(object sender, EventArgs e)
 		{
 			LoadMatchups((int)roundDropDown.SelectedItem); 
 		}
 
+		/// <summary>
+        	/// Reponsible for validating the form data.
+        	/// </summary>
+		/// <returns>Whether the form is valid or not.</returns>
 		private string ValidateData()
 		{
 			string output = "";
@@ -214,6 +228,9 @@ namespace TrackerUI
 			return output;
 		}
 
+		/// <summary>
+        	/// Handles the click event for the score button control.
+        	/// </summary>
 		private void ScoreButton_Click(object sender, EventArgs e)
 		{
 			string errorMessage = ValidateData();
