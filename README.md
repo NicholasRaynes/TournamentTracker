@@ -1,4 +1,4 @@
 # Tournament Tracker
 A tournament tracker desktop application, developed in C#.
 
-<h1>Technology Utilized</h1>
+<h2>Technology Utilized</h2>
