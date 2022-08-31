@@ -5,4 +5,5 @@ A tournament tracker desktop application, developed in C#.
 
 - Multi-form WinForms application
 - In-depth Class Library
+- SQL Database
 
