@@ -7,4 +7,5 @@ A tournament tracker desktop application, developed in C#.
 - In-depth Class Library
 - SQL Database
 - Text File Storage
+- Dapper
 
