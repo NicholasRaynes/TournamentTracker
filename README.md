@@ -9,4 +9,5 @@ A tournament tracker desktop application, developed in C#.
 - Text File Storage
 - Dapper
 - Linq
+- Interfaces
 
