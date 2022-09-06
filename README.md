@@ -10,4 +10,5 @@ A tournament tracker desktop application, developed in C#.
 - Dapper
 - Linq
 - Interfaces
+- Emailing from C#
 
