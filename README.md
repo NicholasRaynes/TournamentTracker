@@ -11,4 +11,5 @@ A tournament tracker desktop application, developed in C#.
 - Linq
 - Interfaces
 - Emailing from C#
+- Custom Events
 
