@@ -2,7 +2,7 @@
 A tournament tracker desktop application, developed in C#.
 
 <h2>Source:</h2>
-https://www.youtube.com/watch?v=wfWxdh-_k_4&t=84s&ab_channel=freeCodeCamp.org
+(Tim Corey) https://www.youtube.com/watch?v=wfWxdh-_k_4&t=84s&ab_channel=freeCodeCamp.org
 
 <h2>Technology Utilized:</h2>
 
