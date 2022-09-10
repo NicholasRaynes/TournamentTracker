@@ -17,7 +17,7 @@ A tournament tracker desktop application, developed in C#.
 - Custom Events
 - Advanced Debugging
 
-<h2>Screenshots</h2>
+<h2>Screenshots:</h2>
 
 ![image](https://user-images.githubusercontent.com/98918017/189499228-0d385d9f-104b-449c-98f4-3fbccca15c04.png)
 
