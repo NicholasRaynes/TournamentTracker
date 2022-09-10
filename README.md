@@ -18,4 +18,4 @@ A tournament tracker desktop application, developed in C#.
 - Advanced Debugging
 
 <h2>Screenshots</h2>
-![image](https://user-images.githubusercontent.com/98918017/189499015-75bba38e-d465-404e-a30c-263fdc527ba7.png)
+![ScreenShot](https://user-images.githubusercontent.com/98918017/189499015-75bba38e-d465-404e-a30c-263fdc527ba7.png)
