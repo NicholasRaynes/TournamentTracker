@@ -20,4 +20,6 @@ A tournament tracker desktop application, developed in C#.
 <h2>Screenshots:</h2>
 
 ![image](https://user-images.githubusercontent.com/98918017/189499228-0d385d9f-104b-449c-98f4-3fbccca15c04.png)
+![image](https://user-images.githubusercontent.com/98918017/189558807-b7241780-bd9c-4bf6-905c-f853a32bf8bf.png)
+
 
